@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="166px" viewBox="0 0 300 166" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>数据底背景</title>
+    <defs>
+        <path d="M292,4 C294.209139,4 296,5.790861 296,8 L296,144 L278,162 L8,162 C5.790861,162 4,160.209139 4,158 L4,8 C4,5.790861 5.790861,4 8,4 L292,4 Z" id="path-1"></path>
+        <filter x="-3.4%" y="-6.3%" width="106.8%" height="112.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="10" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0.552941176   0 0 0 0 0.925490196  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="产业数据" transform="translate(-40.000000, -150.000000)">
+            <g id="形状结合" transform="translate(40.000000, 150.000000)">
+                <path d="M296,0.5 C296.966498,0.5 297.841498,0.891750844 298.474874,1.52512627 C299.108249,2.15850169 299.5,3.03350169 299.5,4 L299.5,4 L299.5,145.792893 L279.792893,165.5 L4,165.5 C3.03350169,165.5 2.15850169,165.108249 1.52512627,164.474874 C0.891750844,163.841498 0.5,162.966498 0.5,162 L0.5,162 L0.5,4 C0.5,3.03350169 0.891750844,2.15850169 1.52512627,1.52512627 C2.15850169,0.891750844 3.03350169,0.5 4,0.5 L4,0.5 Z" stroke="#008DEC"></path>
+                <g>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <path stroke-opacity="0.3" stroke="#008DEC" stroke-width="1" d="M292,4.5 C292.966498,4.5 293.841498,4.89175084 294.474874,5.52512627 C295.108249,6.15850169 295.5,7.03350169 295.5,8 L295.5,8 L295.5,143.792893 L277.792893,161.5 L8,161.5 C7.03350169,161.5 6.15850169,161.108249 5.52512627,160.474874 C4.89175084,159.841498 4.5,158.966498 4.5,158 L4.5,158 L4.5,8 C4.5,7.03350169 4.89175084,6.15850169 5.52512627,5.52512627 C6.15850169,4.89175084 7.03350169,4.5 8,4.5 L8,4.5 Z" stroke-linejoin="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

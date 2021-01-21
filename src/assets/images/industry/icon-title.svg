@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="146px" height="40px" viewBox="0 0 146 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>标题-背景</title>
+    <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="产业数据" transform="translate(-40.000000, -356.000000)">
+            <g id="标题-背景" transform="translate(40.000000, 356.000000)">
+                <g id="装饰2" transform="translate(136.000000, 6.000000)" fill="#008DEC">
+                    <circle id="椭圆形" opacity="0.200000003" cx="2" cy="14" r="2"></circle>
+                    <circle id="椭圆形备份" opacity="0.400000006" cx="2" cy="8" r="2"></circle>
+                    <circle id="椭圆形备份-2" opacity="0.800000012" cx="2" cy="2" r="2"></circle>
+                </g>
+                <g id="装饰1" transform="translate(8.000000, 26.000000) scale(-1, -1) translate(-8.000000, -26.000000) translate(6.000000, 18.000000)" fill="#008DEC">
+                    <circle id="椭圆形" opacity="0.200000003" cx="2" cy="14" r="2"></circle>
+                    <circle id="椭圆形备份" opacity="0.400000006" cx="2" cy="8" r="2"></circle>
+                    <circle id="椭圆形备份-2" opacity="0.800000012" cx="2" cy="2" r="2"></circle>
+                </g>
+                <path d="M133.171573,0.5 C133.569398,0.5 133.950928,0.658035261 134.232233,0.939339828 L134.232233,0.939339828 L145.06066,11.767767 C145.341965,12.0490715 145.5,12.4306024 145.5,12.8284271 L145.5,12.8284271 L145.5,38 C145.5,38.4142136 145.332107,38.7892136 145.06066,39.0606602 C144.789214,39.3321068 144.414214,39.5 144,39.5 L144,39.5 L14.8284271,39.5 C14.4306024,39.5 14.0490715,39.3419647 13.767767,39.0606602 L13.767767,39.0606602 L0.939339828,26.232233 C0.658035261,25.9509285 0.5,25.5693976 0.5,25.1715729 L0.5,25.1715729 L0.5,2 C0.5,1.58578644 0.667893219,1.21078644 0.939339828,0.939339828 C1.21078644,0.667893219 1.58578644,0.5 2,0.5 L2,0.5 Z" id="路径" stroke="#4EFFFE" transform="translate(73.000000, 20.000000) scale(-1, 1) translate(-73.000000, -20.000000) "></path>
+                <polygon id="路径" fill="#4EFFFE" transform="translate(66.000000, 38.000000) scale(1, -1) translate(-66.000000, -38.000000) " points="14 38 12 36 120 36 118 38 60 38 58 40 32 40 30 38"></polygon>
+                <polygon id="路径备份" fill="#4EFFFE" points="24 2 22 0 134 0 132 2 114 2 112 4 106 4 104 2"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+ul,
+dl {
+  list-style: none;
+}
+body {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+}
+.safewidth {
+  width: 1440px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.globalhide{
+  display: none !important;
+}
+.freeze {
+  overflow: hidden;
+}
+
+a {
+  color: $default;
+  text-decoration: none;
+  &:hover {
+    color: $hover;
+  }
+}
+#app {
+  min-height: 100vh;
+}
+.view {
+  &-container {
+    display: flex;
+    min-width: 1000px;
+    height: calc(100vh - 50px);
+  }
+  &-content {
+    flex: 1;
+    overflow-y: auto;
+  }
+}

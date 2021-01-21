@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="380px" viewBox="0 0 12 380" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>右侧装饰</title>
+    <defs>
+        <linearGradient x1="50%" y1="0.472574301%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#18D8F3" offset="0%"></stop>
+            <stop stop-color="#0EC7EE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="产品特性" transform="translate(-408.000000, -302.000000)">
+            <g id="右侧装饰" transform="translate(414.000000, 492.000000) scale(-1, 1) translate(-414.000000, -492.000000) translate(409.000000, 302.000000)">
+                <polyline id="路径-12" stroke="url(#linearGradient-1)" transform="translate(5.000000, 190.000000) scale(-1, 1) translate(-5.000000, -190.000000) " points="0 380 0 360.847656 10 340.847656 10 40 0 20 0 0"></polyline>
+                <line x1="9.5" y1="344.535156" x2="9.5" y2="41" id="路径-12备份" stroke="#FFFFFF" opacity="0.200000003" stroke-dasharray="10,6" transform="translate(9.500000, 192.767578) scale(-1, 1) translate(-9.500000, -192.767578) "></line>
+                <rect id="矩形备份-135" stroke="#46DFFF" transform="translate(8.500000, 75.500000) scale(-1, 1) translate(-8.500000, -75.500000) " x="7.5" y="66" width="2" height="19"></rect>
+                <rect id="矩形备份-136" stroke="#46DFFF" transform="translate(8.500000, 107.500000) scale(-1, 1) translate(-8.500000, -107.500000) " x="7.5" y="98" width="2" height="19"></rect>
+                <rect id="矩形备份-137" stroke="#46DFFF" transform="translate(8.500000, 139.500000) scale(-1, 1) translate(-8.500000, -139.500000) " x="7.5" y="130" width="2" height="19"></rect>
+                <rect id="矩形备份-138" stroke="#46DFFF" transform="translate(8.500000, 171.500000) scale(-1, 1) translate(-8.500000, -171.500000) " x="7.5" y="162" width="2" height="19"></rect>
+                <rect id="矩形备份-139" stroke="#46DFFF" transform="translate(8.500000, 203.500000) scale(-1, 1) translate(-8.500000, -203.500000) " x="7.5" y="194" width="2" height="19"></rect>
+                <rect id="矩形备份-140" stroke="#46DFFF" transform="translate(8.500000, 235.500000) scale(-1, 1) translate(-8.500000, -235.500000) " x="7.5" y="226" width="2" height="19"></rect>
+                <rect id="矩形备份-141" stroke="#46DFFF" transform="translate(8.500000, 267.500000) scale(-1, 1) translate(-8.500000, -267.500000) " x="7.5" y="258" width="2" height="19"></rect>
+                <rect id="矩形备份-142" stroke="#46DFFF" transform="translate(8.500000, 299.500000) scale(-1, 1) translate(-8.500000, -299.500000) " x="7.5" y="290" width="2" height="19"></rect>
+                <rect id="矩形备份-143" stroke="#46DFFF" transform="translate(8.500000, 331.500000) scale(-1, 1) translate(-8.500000, -331.500000) " x="7.5" y="322" width="2" height="19"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
