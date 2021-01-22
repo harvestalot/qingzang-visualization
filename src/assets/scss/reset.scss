@@ -39,14 +39,14 @@ a {
 #app {
   min-height: 100vh;
 }
-.view {
-  &-container {
-    display: flex;
-    min-width: 1000px;
-    height: calc(100vh - 50px);
-  }
-  &-content {
-    flex: 1;
-    overflow-y: auto;
-  }
-}
+// .view {
+//   &-container {
+//     display: flex;
+//     min-width: 1000px;
+//     height: calc(100vh - 50px);
+//   }
+//   &-content {
+//     flex: 1;
+//     overflow-y: auto;
+//   }
+// }
