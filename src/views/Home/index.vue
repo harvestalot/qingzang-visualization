@@ -1,24 +1,23 @@
 <template>
   <div class="Home">
-    <!-- <Menu /> -->
+    <Menu />
     <router-view />
   </div>
 </template>
 
 <script>
-
-// import Menu from '@/components/Menu.vue';
+import Menu from '@/components/Menu.vue';
 
 export default {
   name: 'Home',
   components: {
-    // Menu,
+    Menu,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.Home{
+.Home {
   height: 100vh;
 }
 </style>
