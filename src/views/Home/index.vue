@@ -1,17 +1,17 @@
 <template>
   <div class="Home">
-    <Menu />
+    <Header />
     <router-view />
   </div>
 </template>
 
 <script>
-import Menu from '@/components/Menu.vue';
+import Header from '@/components/Header.vue';
 
 export default {
   name: 'Home',
   components: {
-    Menu,
+    Header,
   },
 };
 </script>

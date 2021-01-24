@@ -6,15 +6,57 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
+    redirect: '/tibet-plateau/integral',
     name: 'Home',
     component: () => import('@/views/Home'),
     children: [
+      {
+        path: 'tibet-plateau',
+        component: () => import('@/views/TibetPlateau'),
+        children: [
+          {
+            path: 'integral',
+            name: 'Home.TibetPlateau.Integral',
+            component: () => import('@/views/TibetPlateau/Integral'),
+          },
+          {
+            path: 'population-size',
+            name: 'Home.Integral.PopulationSize',
+            component: () => import('@/views/TibetPlateau/PopulationSize'),
+          },
+        ],
+      },
+      {
+        path: 'lasa',
+        name: 'LaSa',
+        component: () => import('@/views/LaSa'),
+      },
+      {
+        path: 'lanxi',
+        name: 'LanXi',
+        component: () => import('@/views/LanXi'),
+      },
+      {
+        path: 'frontier',
+        name: 'Frontier',
+        component: () => import('@/views/Frontier'),
+      },
       {
         path: 'demo',
         name: 'Demo',
         component: () => import('@/views/Demo'),
       },
     ],
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/views/404'),
+  },
+  {
+    path: '*',
+    redirect: '/404',
+    hidden: true,
   },
 ];
 
