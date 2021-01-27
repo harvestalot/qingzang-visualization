@@ -51,7 +51,7 @@
           class="submenu-popup"
         >
           <template slot="title">
-            <router-link to="/lasa">拉萨城市群</router-link>
+            <router-link to="/lasa/integral">拉萨城市群</router-link>
           </template>
           <el-submenu index="urbanization">
             <template slot="title">城镇化</template>
@@ -75,7 +75,7 @@
           class="submenu-popup"
         >
           <template slot="title">
-            <router-link to="/lanxi">兰西城市群</router-link>
+            <router-link to="/lanxi/integral">兰西城市群</router-link>
           </template>
           <el-menu-item>城镇化</el-menu-item>
           <el-menu-item>生态环境</el-menu-item>
@@ -91,7 +91,7 @@
           class="submenu-popup"
         >
           <template slot="title">
-            <router-link to="/frontier">边境城市带</router-link>
+            <router-link to="/frontier/integral">边境城市带</router-link>
           </template>
           <el-menu-item>城镇化</el-menu-item>
           <el-menu-item>生态环境</el-menu-item>

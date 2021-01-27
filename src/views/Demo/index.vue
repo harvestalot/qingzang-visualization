@@ -15,6 +15,9 @@ export default {
   },
   mounted() {
     this.initMap();
+    this.$axios.get('/mockData/population_data.json').then((res) => {
+      console.log(res);
+    });
   },
   methods: {
     initMap() {
@@ -34,13 +37,15 @@ export default {
         .then((AMap) => {
           this.map = new AMap.Map('mapContainer', {
             resizeEnable: true,
-            zoom: 4,
-            mapStyle: 'amap://styles/4ab81766c3532896d5b265289c82cbc6',
-            // mapStyle: 'amap://styles/a9434e6a60ea785788bca67352ffa70e',
+            zoom: 5,
+            center: [105.82675, 39.026228],
+            mapStyle: 'amap://styles/a9434e6a60ea785788bca67352ffa70e',
+            layers: [],
           });
+          console.log(this.map.getBounds());
           this.map.on('click', (ev) => {
             console.log(ev);
-            this.loadShadeLayer('南阳市');
+            this.loadShadeLayer('河南省');
           });
         })
         .catch((e) => {
@@ -82,6 +87,7 @@ export default {
             map.setZoomAndCenter(7, [113.82675, 34.026228]);
             this.shadeLayer.on('click', () => {
               map.remove(this.shadeLayer);
+              map.setZoomAndCenter(5, [105.82675, 39.026228]);
             });
           });
         })

@@ -30,16 +30,37 @@ const routes = [
         path: 'lasa',
         name: 'LaSa',
         component: () => import('@/views/LaSa'),
+        children: [
+          {
+            path: 'integral',
+            name: 'Home.LaSa.Integral',
+            component: () => import('@/views/LaSa/Integral'),
+          },
+        ],
       },
       {
         path: 'lanxi',
         name: 'LanXi',
         component: () => import('@/views/LanXi'),
+        children: [
+          {
+            path: 'integral',
+            name: 'Home.LanXi.Integral',
+            component: () => import('@/views/LanXi/Integral'),
+          },
+        ],
       },
       {
         path: 'frontier',
         name: 'Frontier',
         component: () => import('@/views/Frontier'),
+        children: [
+          {
+            path: 'integral',
+            name: 'Home.Frontier.Integral',
+            component: () => import('@/views/Frontier/Integral'),
+          },
+        ],
       },
       {
         path: 'demo',
@@ -61,7 +82,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   routes,
 });
 

@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import yearWatch from '@/mixins/YearWatch';
 import Economy from './Economy.vue';
 import Population from './Population.vue';
 import UrbanLand from './UrbanLand.vue';
@@ -30,6 +31,7 @@ import UrbanizationIndex from './UrbanizationIndex.vue';
 
 export default {
   name: 'TibetPlateau',
+  mixins: [yearWatch],
   components: {
     Population,
     Economy,
@@ -38,27 +40,6 @@ export default {
     Forest,
     VegetationIndex,
     UrbanizationIndex,
-  },
-  watch: {
-    '$store.state.currentYear': {
-      immediate: true,
-      handler(year) {
-        this.$nextTick(() => {
-          this.init(year);
-        });
-      },
-    },
-  },
-  methods: {
-    init(year) {
-      this.$refs.childPopulation.initChart(year);
-      this.$refs.childEconomy.initChart(year);
-      this.$refs.childUrbanLand.initChart(year);
-      this.$refs.childWater.initChart(year);
-      this.$refs.childForest.initChart(year);
-      this.$refs.childVegetationIndex.initChart(year);
-      this.$refs.childUrbanizationIndex.initChart(year);
-    },
   },
 };
 </script>
