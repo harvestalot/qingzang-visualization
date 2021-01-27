@@ -1,17 +1,17 @@
 <template>
   <div class="Home">
-    <Header />
+    <!-- <Header /> -->
     <router-view />
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
+// import Header from '@/components/Header.vue';
 
 export default {
   name: 'Home',
   components: {
-    Header,
+    // Header,
   },
 };
 </script>

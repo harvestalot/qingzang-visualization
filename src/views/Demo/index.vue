@@ -1,20 +1,31 @@
 <template>
   <div class="Demo">
+    <TimerShaft
+      :times="times"
+      :futureTimes="futureTimes"
+    />
     <div id="mapContainer"></div>
   </div>
 </template>
 
 <script>
+import TimerShaft from '@/components/TimerShaft.vue';
+
 export default {
   name: 'Demo',
+  components: {
+    TimerShaft,
+  },
   data() {
     return {
       map: null,
       shadeLayer: null,
+      times: [2000, 2005, 2009, 2012, 2018, 2020],
+      futureTimes: [2025, 2030],
     };
   },
   mounted() {
-    this.initMap();
+    // this.initMap();
     this.$axios.get('/mockData/population_data.json').then((res) => {
       console.log(res);
     });
