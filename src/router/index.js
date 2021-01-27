@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+// const Layout = () => import('@/components/Layout.vue');
+
 Vue.use(VueRouter);
 
 const routes = [

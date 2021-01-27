@@ -3,7 +3,6 @@ const yearWatch = {
     '$store.state.currentYear': {
       immediate: true,
       handler(year) {
-        console.log(year);
         this.$nextTick(() => {
           this.init(year);
         });
