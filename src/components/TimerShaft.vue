@@ -45,10 +45,14 @@ export default {
       type: Array,
       default: () => [],
     },
+    currentTime: {
+      type: Number | String,
+      default: () => '',
+    },
   },
   data() {
     return {
-      currentTime: this.times[0],
+      // currentTime: this.times[0],
       allTimes: this.times.concat(this.futureTimes),
       startTime: '',
       endTime: '',
@@ -64,12 +68,12 @@ export default {
     },
   },
   mounted() {
-    let index = 1;
-    setInterval(() => {
-      if (index === this.allTimes.length) index = 0;
-      this.currentTime = this.allTimes[index];
-      index += 1;
-    }, 5000);
+    // let index = 1;
+    // setInterval(() => {
+    //   if (index === this.allTimes.length) index = 0;
+    //   this.currentTime = this.allTimes[index];
+    //   index += 1;
+    // }, 5000);
   },
 };
 </script>
