@@ -106,6 +106,7 @@ export default {
           {
             type: 'map',
             map: 'QZ-CITY',
+            // geoIndex: 0,
             center: [90.5887, 33.2368],
             layoutCenter: ['50%', '50%'],
             layoutSize: '100%',

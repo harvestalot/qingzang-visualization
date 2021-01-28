@@ -1,36 +1,199 @@
 <template>
   <div class="Demo">
-    <TimerShaft
-      :times="times"
-      :futureTimes="futureTimes"
-    />
-    <div id="mapContainer"></div>
+    <!-- <div id="mapContainer"></div> -->
+    <div
+      ref="mapGraph"
+      class="Demo-container"
+    ></div>
+    <!-- <AntMap /> -->
+    <!-- <EchartGraph /> -->
   </div>
 </template>
 
 <script>
-import TimerShaft from '@/components/TimerShaft.vue';
+import $echartsOptions from '@/utils/echarts';
+import AntMap from './AntMap.vue';
+import EchartGraph from './EchartGraph.vue';
+import $xian from './xian.json';
+import $xianyang from './xianyang.json';
+import $xuexiao from './xuexiao.json';
+
+require('echarts/lib/chart/map');
+require('echarts/lib/component/geo');
 
 export default {
   name: 'Demo',
   components: {
-    TimerShaft,
+    AntMap,
+    EchartGraph,
   },
   data() {
     return {
       map: null,
       shadeLayer: null,
-      times: [2000, 2005, 2009, 2012, 2018, 2020],
-      futureTimes: [2025, 2030],
     };
   },
   mounted() {
+    this.initChart();
     // this.initMap();
     this.$axios.get('/mockData/population_data.json').then((res) => {
       console.log(res);
     });
   },
   methods: {
+    initChart() {
+      this.mapView = $echartsOptions.echarts.init(this.$refs.mapGraph);
+      $echartsOptions.echarts.registerMap('XIAN-BOUNDARY', {
+        type: 'FeatureCollection',
+        features: $xian.concat($xianyang),
+      });
+      // $echartsOptions.echarts.registerMap('XUEXIAO-BOUNDARY', $xuexiao);
+      this.initChartOptions();
+    },
+    initChartOptions() {
+      this.option = {
+        title: {
+          text: '西安咸阳',
+          left: 20,
+          top: 20,
+          textStyle: {
+            fontSize: 20,
+            color: '#fff',
+          },
+        },
+        geo: {
+          // show: false,
+          map: 'XIAN-BOUNDARY',
+          // center: [89.0887, 33.1168],
+          // layoutCenter: ['47%', '51%'],
+          // layoutSize: '124%',
+          roam: true,
+          zlevel: 1,
+          label: {
+            normal: {
+              color: '#fff',
+            },
+            emphasis: {
+              color: '#fff',
+            },
+          },
+          itemStyle: {
+            normal: {
+              borderColor: '#389BB7',
+              areaColor: '#000',
+              borderWidth: 2,
+            },
+            emphasis: {
+              areaColor: '#000',
+              borderColor: '#8DF965',
+              borderWidth: 2,
+            },
+          },
+          regions: [
+            {
+              name: '财经学校',
+              selected: true,
+              emphasis: {
+                label: {
+                  show: false,
+                },
+                itemStyle: {
+                  areaColor: '#389BB7',
+                  borderColor: '#41FC86',
+                  borderWidth: 2,
+                },
+              },
+            },
+            {
+              name: '康杜村',
+              selected: true,
+              emphasis: {
+                label: {
+                  show: false,
+                },
+                itemStyle: {
+                  areaColor: '#389BB7',
+                  borderColor: '#41FC86',
+                  borderWidth: 2,
+                },
+              },
+            },
+          ],
+        },
+        series: [
+          // {
+          //   type: 'map',
+          //   map: 'chain',
+          //   roam: true,
+          //   geoIndex: 0,
+          //   // center: [90.5887, 33.2368],
+          //   // layoutCenter: ['50%', '50%'],
+          //   // layoutSize: '100%',
+          //   zlevel: 2,
+          //   label: {
+          //     normal: {
+          //       show: true,
+          //       textStyle: {
+          //         color: '#fff',
+          //       },
+          //     },
+          //     emphasis: {
+          //       textStyle: {
+          //         color: '#fff',
+          //       },
+          //     },
+          //   },
+          //   itemStyle: {
+          //     normal: {
+          //       borderColor: '#389BB7',
+          //       areaColor: '#000',
+          //       borderWidth: 2,
+          //     },
+          //     emphasis: {
+          //       areaColor: '#389BB7',
+          //       borderColor: '#8DF965',
+          //       borderWidth: 2,
+          //     },
+          //   },
+          // },
+          // {
+          //   type: 'map',
+          //   map: 'XUEXIAO-BOUNDARY',
+          //   // geoIndex: 0,
+          //   // center: [90.5887, 33.2368],
+          //   layoutCenter: ['50%', '50%'],
+          //   layoutSize: '10%',
+          //   zlevel: 10,
+          //   label: {
+          //     normal: {
+          //       show: true,
+          //       textStyle: {
+          //         color: '#fff',
+          //       },
+          //     },
+          //     emphasis: {
+          //       textStyle: {
+          //         color: '#fff',
+          //       },
+          //     },
+          //   },
+          //   itemStyle: {
+          //     normal: {
+          //       areaColor: '#389BB7',
+          //       borderColor: '#8DF965',
+          //       borderWidth: 2,
+          //     },
+          //     emphasis: {
+          //       areaColor: '#389BB7',
+          //       borderColor: '#8DF965',
+          //       borderWidth: 2,
+          //     },
+          //   },
+          // },
+        ],
+      };
+      this.mapView.setOption(this.option, true);
+    },
     initMap() {
       this.$AMapLoader
         .load({
@@ -50,14 +213,15 @@ export default {
             resizeEnable: true,
             zoom: 5,
             center: [105.82675, 39.026228],
-            mapStyle: 'amap://styles/a9434e6a60ea785788bca67352ffa70e',
+            // mapStyle: 'amap://styles/a9434e6a60ea785788bca67352ffa70e',
             layers: [],
           });
-          console.log(this.map.getBounds());
-          this.map.on('click', (ev) => {
-            console.log(ev);
-            this.loadShadeLayer('河南省');
-          });
+          this.loadLoca();
+          // console.log(this.map.getBounds());
+          // this.map.on('click', (ev) => {
+          //   console.log(ev);
+          //   this.loadShadeLayer('河南省');
+          // });
         })
         .catch((e) => {
           console.log(e);
@@ -106,6 +270,41 @@ export default {
           console.error(e);
         });
     },
+    loadLoca() {
+      // this.$AMapLoader.load().then(() => {
+      const layer = new Loca.DistrictLayer({
+        map: this.map,
+      });
+      layer.setOptions({
+        style: {
+          // 行政区 adcode
+          adcode: 100000,
+          // 热力聚合模式，count 为点数量加和
+          mode: 'count', // 聚合模式，可选值: sum(值求和)、max(最大值)、min(最小值)、mean(平均值)、median(中位数)、count(个数)
+          // 颜色范围
+          color: ['#f0f9e8', '#bae4bc', '#7bccc4', '#43a2ca', '#0868ac'],
+          text: {
+            content: '文字', // 文字内容
+            direction: 'center', // 文字方位
+            offset: [10, -10], // 偏移大小
+            fontSize: 16, // 文字大小
+            fillColor: '#E67E22', // 文字颜色
+            strokeColor: 'rgba(255,255,255,0.85)', // 文字描边颜色
+            strokeWidth: 1, // 文字描边宽度
+          },
+        },
+      });
+
+      // 渲染
+      layer.render();
+      console.log(layer);
+      layer.on('click', (ev) => {
+        const { feature } = ev;
+        const { adcode } = feature.subFeature.properties;
+        layer.goto(adcode);
+      });
+      // });
+    },
   },
 };
 </script>
@@ -115,6 +314,10 @@ export default {
   width: 100%;
   height: 100%;
   .amap-container {
+    width: 100%;
+    height: 100%;
+  }
+  &-container {
     width: 100%;
     height: 100%;
   }
