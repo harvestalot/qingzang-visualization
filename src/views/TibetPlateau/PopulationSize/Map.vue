@@ -187,42 +187,26 @@ export default {
       for (let i = 0; i < data.length; i += 1) {
         const item = data[i];
         const value = item.value[2];
+        let symbolSize = 5;
         if (value > 100) {
-          newData.push({
-            name: item.name,
-            value: [item.value[0], item.value[1], 50],
-          });
+          symbolSize = 50;
         } else if (value > 50 && value < 100) {
-          newData.push({
-            name: item.name,
-            value: [item.value[0], item.value[1], 40],
-          });
+          symbolSize = 40;
         } else if (value > 20 && value < 50) {
-          newData.push({
-            name: item.name,
-            value: [item.value[0], item.value[1], 30],
-          });
+          symbolSize = 30;
         } else if (value > 10 && value < 20) {
-          newData.push({
-            name: item.name,
-            value: [item.value[0], item.value[1], 20],
-          });
+          symbolSize = 20;
         } else if (value > 5 && value < 10) {
-          newData.push({
-            name: item.name,
-            value: [item.value[0], item.value[1], 15],
-          });
+          symbolSize = 15;
         } else if (value > 1 && value < 5) {
-          newData.push({
-            name: item.name,
-            value: [item.value[0], item.value[1], 10],
-          });
+          symbolSize = 10;
         } else if (value < 1) {
-          newData.push({
-            name: item.name,
-            value: [item.value[0], item.value[1], 5],
-          });
+          symbolSize = 5;
         }
+        newData.push({
+          name: item.name,
+          value: [item.value[0], item.value[1], symbolSize],
+        });
       }
       return newData;
     },

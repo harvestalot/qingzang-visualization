@@ -39,6 +39,11 @@ export default {
     this.$axios.get('/mockData/population_data.json').then((res) => {
       console.log(res);
     });
+    const ws = new WebSocket('ws://localhost:8080/');
+
+    ws.onmessage = function (event) {
+      console.log(event.data);
+    };
   },
   methods: {
     initChart() {
@@ -89,107 +94,125 @@ export default {
               borderWidth: 2,
             },
           },
-          regions: [
-            {
-              name: '财经学校',
-              selected: true,
-              emphasis: {
-                label: {
-                  show: false,
-                },
-                itemStyle: {
-                  areaColor: '#389BB7',
-                  borderColor: '#41FC86',
-                  borderWidth: 2,
-                },
-              },
-            },
-            {
-              name: '康杜村',
-              selected: true,
-              emphasis: {
-                label: {
-                  show: false,
-                },
-                itemStyle: {
-                  areaColor: '#389BB7',
-                  borderColor: '#41FC86',
-                  borderWidth: 2,
-                },
-              },
-            },
-          ],
+          // regions: [
+          //   {
+          //     name: '财经学校',
+          //     selected: true,
+          //     emphasis: {
+          //       label: {
+          //         show: false,
+          //       },
+          //       itemStyle: {
+          //         areaColor: '#389BB7',
+          //         borderColor: '#41FC86',
+          //         borderWidth: 2,
+          //       },
+          //     },
+          //   },
+          //   {
+          //     name: '康杜村',
+          //     selected: true,
+          //     emphasis: {
+          //       label: {
+          //         show: false,
+          //       },
+          //       itemStyle: {
+          //         areaColor: '#389BB7',
+          //         borderColor: '#41FC86',
+          //         borderWidth: 2,
+          //       },
+          //     },
+          //   },
+          // ],
         },
         series: [
-          // {
-          //   type: 'map',
-          //   map: 'chain',
-          //   roam: true,
-          //   geoIndex: 0,
-          //   // center: [90.5887, 33.2368],
-          //   // layoutCenter: ['50%', '50%'],
-          //   // layoutSize: '100%',
-          //   zlevel: 2,
-          //   label: {
-          //     normal: {
-          //       show: true,
-          //       textStyle: {
-          //         color: '#fff',
-          //       },
-          //     },
-          //     emphasis: {
-          //       textStyle: {
-          //         color: '#fff',
-          //       },
-          //     },
-          //   },
-          //   itemStyle: {
-          //     normal: {
-          //       borderColor: '#389BB7',
-          //       areaColor: '#000',
-          //       borderWidth: 2,
-          //     },
-          //     emphasis: {
-          //       areaColor: '#389BB7',
-          //       borderColor: '#8DF965',
-          //       borderWidth: 2,
-          //     },
-          //   },
-          // },
-          // {
-          //   type: 'map',
-          //   map: 'XUEXIAO-BOUNDARY',
-          //   // geoIndex: 0,
-          //   // center: [90.5887, 33.2368],
-          //   layoutCenter: ['50%', '50%'],
-          //   layoutSize: '10%',
-          //   zlevel: 10,
-          //   label: {
-          //     normal: {
-          //       show: true,
-          //       textStyle: {
-          //         color: '#fff',
-          //       },
-          //     },
-          //     emphasis: {
-          //       textStyle: {
-          //         color: '#fff',
-          //       },
-          //     },
-          //   },
-          //   itemStyle: {
-          //     normal: {
-          //       areaColor: '#389BB7',
-          //       borderColor: '#8DF965',
-          //       borderWidth: 2,
-          //     },
-          //     emphasis: {
-          //       areaColor: '#389BB7',
-          //       borderColor: '#8DF965',
-          //       borderWidth: 2,
-          //     },
-          //   },
-          // },
+          {
+            type: 'map',
+            map: 'XIAN-BOUNDARY',
+            roam: true,
+            geoIndex: 0,
+            // center: [90.5887, 33.2368],
+            // layoutCenter: ['50%', '50%'],
+            // layoutSize: '100%',
+            zlevel: 2,
+            data: [
+              {
+                name: '雁塔区',
+                value: 1,
+                selected: true,
+                emphasis: {
+                  itemStyle: {
+                    areaColor: 'red',
+                    borderColor: '#41FC86',
+                    borderWidth: 2,
+                  },
+                },
+              },
+              {
+                name: '康杜村',
+                value: 1,
+              },
+            ],
+            label: {
+              normal: {
+                show: true,
+                textStyle: {
+                  color: '#fff',
+                },
+              },
+              emphasis: {
+                textStyle: {
+                  color: '#fff',
+                },
+              },
+            },
+            itemStyle: {
+              normal: {
+                borderColor: '#389BB7',
+                areaColor: '#000',
+                borderWidth: 2,
+              },
+              emphasis: {
+                areaColor: '#389BB7',
+                borderColor: '#8DF965',
+                borderWidth: 2,
+              },
+            },
+          },
+          {
+            type: 'map',
+            map: 'XUEXIAO-BOUNDARY',
+            geoIndex: 0,
+            // center: [90.5887, 33.2368],
+            layoutCenter: ['50%', '50%'],
+            layoutSize: '10%',
+            zlevel: 10,
+            label: {
+              normal: {
+                show: true,
+                textStyle: {
+                  color: '#fff',
+                },
+              },
+              emphasis: {
+                textStyle: {
+                  color: '#fff',
+                },
+              },
+            },
+            itemStyle: {
+              normal: {
+                areaColor: '#389BB7',
+                borderColor: '#8DF965',
+                borderWidth: 2,
+              },
+              emphasis: {
+                areaColor: '#389BB7',
+                borderColor: '#8DF965',
+                borderWidth: 2,
+              },
+            },
+          },
         ],
       };
       this.mapView.setOption(this.option, true);
