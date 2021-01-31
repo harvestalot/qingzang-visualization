@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import mapData from './mudules/mapData';
 
 Vue.use(Vuex);
 
@@ -25,6 +26,9 @@ const store = new Vuex.Store({
     setCurrentYear(state, year) {
       state.currentYear = year;
     },
+  },
+  modules: {
+    mapData,
   },
 });
 

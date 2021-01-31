@@ -24,8 +24,8 @@
             <template slot="title">城镇化</template>
             <el-menu-item>城镇化率时空变化</el-menu-item>
             <el-menu-item index="/tibet-plateau/population-size">人口规模时空演变</el-menu-item>
-            <el-menu-item>用地规模时空演变</el-menu-item>
-            <el-menu-item>城镇时空分布的核密度</el-menu-item>
+            <el-menu-item index="/tibet-plateau/use-land-scale">用地规模时空演变</el-menu-item>
+            <el-menu-item index='/tibet-plateau/town-temporal-distribution'>城镇时空分布的核密度</el-menu-item>
             <el-menu-item>人口空间分异</el-menu-item>
             <el-menu-item>人口迁移的近远程空间分异</el-menu-item>
           </el-submenu>

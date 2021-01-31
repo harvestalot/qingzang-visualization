@@ -26,6 +26,16 @@ const routes = [
             name: 'Home.Integral.PopulationSize',
             component: () => import('@/views/TibetPlateau/PopulationSize'),
           },
+          {
+            path: 'use-land-scale',
+            name: 'Home.Integral.UseLandScale',
+            component: () => import('@/views/TibetPlateau/UseLandScale'),
+          },
+          {
+            path: 'town-temporal-distribution',
+            name: 'Home.Integral.TownTemporalDistribution',
+            component: () => import('@/views/TibetPlateau/TownTemporalDistribution'),
+          },
         ],
       },
       {

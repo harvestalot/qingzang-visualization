@@ -20,7 +20,7 @@ export default {
       default: () => [],
     },
     seriesData: {
-      type: Array,
+      type: Array | Object,
       default: () => [],
     },
   },

@@ -18,11 +18,26 @@
           <div :class="['TimerShaft-container-item-dot', {'active': currentTime === time}]">
             <span>{{ time }}</span>
           </div>
-          <div :class="['TimerShaft-container-item-line',
+          <template v-if="endTime">
+            <div :class="['TimerShaft-container-item-line',
           {'dashes': time >= dashesStartTime}]"></div>
+          </template>
+          <template v-else>
+            <div
+              v-if="(time < dashesStartTime)"
+              class="TimerShaft-container-item-line"
+            ></div>
+            <div
+              v-else
+              class="TimerShaft-container-item-empty"
+            ></div>
+          </template>
         </div>
       </template>
-      <div class="TimerShaft-container-item">
+      <div
+        v-if="endTime"
+        class="TimerShaft-container-item"
+      >
         <div class="TimerShaft-container-item-line dashes"></div>
         <div :class="['TimerShaft-container-item-dot', {'active': currentTime === endTime}]">
           <span>{{ endTime }}</span>
@@ -63,7 +78,7 @@ export default {
     mmergeTimes() {
       const { times, futureTimes } = this.$props;
       this.startTime = times.shift();
-      this.endTime = futureTimes.pop();
+      this.endTime = futureTimes.length ? futureTimes.pop() : '';
       return times.concat(futureTimes);
     },
   },

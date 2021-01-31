@@ -1,10 +1,10 @@
 <template>
   <div class="Demo">
-    <!-- <div id="mapContainer"></div> -->
-    <div
+    <div id="mapContainer"></div>
+    <!-- <div
       ref="mapGraph"
       class="Demo-container"
-    ></div>
+    ></div> -->
     <!-- <AntMap /> -->
     <!-- <EchartGraph /> -->
   </div>
@@ -31,19 +31,20 @@ export default {
     return {
       map: null,
       shadeLayer: null,
+      imgurl: require('@/assets/images/qingzang.jpg'), // '@/assets/images/qingzang.jpg',
     };
   },
   mounted() {
-    this.initChart();
-    // this.initMap();
-    this.$axios.get('/mockData/population_data.json').then((res) => {
-      console.log(res);
-    });
-    const ws = new WebSocket('ws://localhost:8080/');
+    // this.initChart();
+    this.initMap();
+    // this.$axios.get('/mockData/population_data.json').then((res) => {
+    //   console.log(res);
+    // });
+    // const ws = new WebSocket('ws://localhost:8080/');
 
-    ws.onmessage = function (event) {
-      console.log(event.data);
-    };
+    // ws.onmessage = function (event) {
+    //   console.log(event.data);
+    // };
   },
   methods: {
     initChart() {
@@ -232,14 +233,20 @@ export default {
           },
         })
         .then((AMap) => {
+          const imageLayer = new AMap.ImageLayer({
+            url: this.imgurl,
+            bounds: new AMap.Bounds([72.072, 19.679], [106.198, 46.236]),
+            zooms: [5, 20],
+          });
           this.map = new AMap.Map('mapContainer', {
             resizeEnable: true,
+            center: [89.33719, 38.942384],
             zoom: 5,
-            center: [105.82675, 39.026228],
             // mapStyle: 'amap://styles/a9434e6a60ea785788bca67352ffa70e',
-            layers: [],
+            // layers: [imageLayer],
           });
-          this.loadLoca();
+          this.map.add(imageLayer);
+          // this.loadLoca();
           // console.log(this.map.getBounds());
           // this.map.on('click', (ev) => {
           //   console.log(ev);

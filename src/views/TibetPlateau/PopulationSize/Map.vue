@@ -4,16 +4,16 @@
       ref="mapGraph"
       class="Map-container"
     ></div>
-    <TimerShaft
+    <!-- <TimerShaft
       :times="['1990', '2000', '2010', '2015']"
       :futureTimes="['2025', '2030', '2035']"
       :currentTime="currentTime"
-    />
+    /> -->
   </div>
 </template>
 
 <script>
-import TimerShaft from '@/components/TimerShaft.vue';
+// import TimerShaft from '@/components/TimerShaft.vue';
 import $echartsOptions from '@/utils/echarts';
 import $qingzangPrefectureLevelCity from '@/assets/mockData/qingzang_prefecture_level_city';
 import $thridPoleBoundaryData from '@/assets/mockData/thrid_pole_boundary_data';
@@ -26,14 +26,14 @@ require('echarts/lib/component/geo');
 export default {
   name: 'Map',
   components: {
-    TimerShaft,
+    // TimerShaft,
   },
   data() {
     return {
       mapView: null,
       option: null,
-      timer: null,
       currentTime: '1990',
+      currentTimeIndex: 0,
       timeline: ['1990', '2000', '2010', '2015', '2025', '2030', '2035'],
       colors: [
         '#F6C044',
@@ -47,20 +47,20 @@ export default {
     };
   },
   mounted() {
-    this.initChart();
+    // this.initChart();
   },
   methods: {
-    initChart() {
-      this.mapView = $echartsOptions.echarts.init(this.$refs.mapGraph);
-      $echartsOptions.echarts.registerMap('QZ-BOUNDARY', {
-        type: 'FeatureCollection',
-        features: $thridPoleBoundaryData,
-      });
-      $echartsOptions.echarts.registerMap('QZ-CITY', {
-        type: 'FeatureCollection',
-        features: $qingzangPrefectureLevelCity,
-      });
-      this.initChartOptions();
+    initChart({ year, index }) {
+      this.currentTime = year;
+      this.currentTimeIndex = index;
+      if (!this.mapView) {
+        this.mapView = $echartsOptions.echarts.init(this.$refs.mapGraph);
+        $echartsOptions.echarts.registerMap('QZ-BOUNDARY', {
+          type: 'FeatureCollection',
+          features: $thridPoleBoundaryData.concat($qingzangPrefectureLevelCity),
+        });
+        this.initChartOptions();
+      }
       this.setChartOptions();
     },
     initChartOptions() {
@@ -81,12 +81,19 @@ export default {
         geo: {
           map: 'QZ-BOUNDARY',
           center: [89.0887, 33.1168],
-          layoutCenter: ['47%', '51%'],
+          layoutCenter: ['47%', '41%'],
           layoutSize: '124%',
-          zlevel: 0,
           label: {
             normal: {
-              show: false,
+              show: true,
+              textStyle: {
+                color: '#fff',
+              },
+            },
+            emphasis: {
+              textStyle: {
+                color: '#fff',
+              },
             },
           },
           itemStyle: {
@@ -96,46 +103,37 @@ export default {
               borderWidth: 2,
             },
             emphasis: {
-              areaColor: '#000',
+              areaColor: '#389BB7',
               borderColor: '#389BB7',
               borderWidth: 2,
             },
           },
+          regions: [
+            {
+              name: '青藏地区',
+              label: {
+                normal: {
+                  show: false,
+                },
+                emphasis: {
+                  show: false,
+                },
+              },
+              itemStyle: {
+                normal: {
+                  show: false,
+                  areaColor: 'rgba(0,0,0,0)',
+                  borderColor: '#389BB7',
+                },
+                emphasis: {
+                  show: false,
+                  areaColor: 'rgba(0,0,0,0)',
+                },
+              },
+            },
+          ],
         },
         series: [
-          {
-            type: 'map',
-            map: 'QZ-CITY',
-            // geoIndex: 0,
-            center: [90.5887, 33.2368],
-            layoutCenter: ['50%', '50%'],
-            layoutSize: '100%',
-            zlevel: 1,
-            label: {
-              normal: {
-                show: true,
-                textStyle: {
-                  color: '#fff',
-                },
-              },
-              emphasis: {
-                textStyle: {
-                  color: '#fff',
-                },
-              },
-            },
-            itemStyle: {
-              normal: {
-                show: true,
-                areaColor: 'rgba(0,0,0,0)',
-                borderColor: '#2185EF',
-              },
-              emphasis: {
-                areaColor: '#389BB7',
-                borderWidth: 0,
-              },
-            },
-          },
           {
             name: '人口规模',
             type: 'scatter',
@@ -169,18 +167,13 @@ export default {
       this.mapView.setOption(this.option, true);
     },
     setChartOptions() {
-      let index = 1;
-      this.timer = setInterval(() => {
-        if (index === 7) index = 0;
-        this.currentTime = this.timeline[index];
-        this.option.title.subtext = `${this.currentTime}年`;
-        this.option.series[1].itemStyle.normal.color = this.colors[index];
-        this.option.series[1].data = this.getFormatData(
-          $populationSizeData[this.currentTime]
-        );
-        this.mapView.setOption(this.option, true);
-        index += 1;
-      }, 5000);
+      const { currentTime, currentTimeIndex, colors } = this;
+      this.option.title.subtext = `${currentTime}年`;
+      this.option.series[0].itemStyle.normal.color = colors[currentTimeIndex];
+      this.option.series[0].data = this.getFormatData(
+        $populationSizeData[this.currentTime]
+      );
+      this.mapView.setOption(this.option, true);
     },
     getFormatData(data) {
       const newData = [];
@@ -210,12 +203,6 @@ export default {
       }
       return newData;
     },
-  },
-  destroyed() {
-    clearInterval(this.timer);
-    // this.echartsView.dispose();
-    // this.echartsView = null;
-    // this.option = null;
   },
 };
 </script>

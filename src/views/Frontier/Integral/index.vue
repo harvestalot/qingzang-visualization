@@ -1,19 +1,21 @@
 <template>
-  <div class="Integral">
-    <div class="Integral-top">
-      <div class="Integral-top-left">
+  <div class="Frontier-Integral">
+    <div class="Frontier-Integral-top">
+      <div class="Frontier-Integral-top-left">
         <Population ref="childPopulation" />
         <Economy ref="childEconomy" />
         <UrbanLand ref="childUrbanLand" />
       </div>
-      <div class="Integral-top-map"></div>
-      <div class="Integral-top-right">
+      <div class="Frontier-Integral-top-map">
+        <Map />
+      </div>
+      <div class="Frontier-Integral-top-right">
         <Water ref="childWater" />
         <Forest ref="childForest" />
         <VegetationIndex ref="childVegetationIndex" />
       </div>
     </div>
-    <div class="Integral-bottom">
+    <div class="Frontier-Integral-bottom">
       <UrbanizationIndex ref="childUrbanizationIndex" />
     </div>
   </div>
@@ -21,6 +23,7 @@
 
 <script>
 import yearWatch from '@/mixins/YearWatch';
+import Map from './Map.vue';
 import Economy from './Economy.vue';
 import Population from './Population.vue';
 import UrbanLand from './UrbanLand.vue';
@@ -30,9 +33,10 @@ import VegetationIndex from './VegetationIndex.vue';
 import UrbanizationIndex from './UrbanizationIndex.vue';
 
 export default {
-  name: 'Integral',
+  name: 'Frontier-Integral',
   mixins: [yearWatch],
   components: {
+    Map,
     Population,
     Economy,
     UrbanLand,
@@ -45,9 +49,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.Integral {
+.Frontier-Integral {
   width: 100%;
-  height: calc(100% - 60px);
+  height: 100%;
   &-top {
     height: 75%;
     padding: 10px 0;
