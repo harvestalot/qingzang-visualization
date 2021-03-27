@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import AMapLoader from '@amap/amap-jsapi-loader';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import store from './store';
@@ -8,7 +7,6 @@ import './plugins/axios';
 import App from './App.vue';
 
 Vue.use(ElementUI);
-Vue.prototype.$AMapLoader = AMapLoader;
 
 Vue.config.productionTip = false;
 

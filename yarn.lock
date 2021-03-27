@@ -3350,6 +3350,11 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
+echarts-liquidfill@^2.0.2:
+  version "2.0.6"
+  resolved "https://registry.npm.taobao.org/echarts-liquidfill/download/echarts-liquidfill-2.0.6.tgz?cache=0&sync_timestamp=1610851910935&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fecharts-liquidfill%2Fdownload%2Fecharts-liquidfill-2.0.6.tgz#0668dc61d87a6262003090bd32c55aa8108c252e"
+  integrity sha1-BmjcYdh6YmIAMJC9MsVaqBCMJS4=
+
 echarts-wordcloud@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/echarts-wordcloud/-/echarts-wordcloud-2.0.0.tgz#52ef817895801ffe9e99dd1bacab7686b2dec04a"

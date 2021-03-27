@@ -12,8 +12,6 @@
 
 <script>
 import $echartsOptions from '@/utils/echarts';
-import AntMap from './AntMap.vue';
-import EchartGraph from './EchartGraph.vue';
 import $xian from './xian.json';
 import $xianyang from './xianyang.json';
 import $xuexiao from './xuexiao.json';
@@ -23,10 +21,7 @@ require('echarts/lib/component/geo');
 
 export default {
   name: 'Demo',
-  components: {
-    AntMap,
-    EchartGraph,
-  },
+  components: {},
   data() {
     return {
       map: null,
