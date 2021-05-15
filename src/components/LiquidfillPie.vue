@@ -159,9 +159,16 @@ export default {
       this.echartsView.setOption(this.option, true);
     },
     setChartOptions() {
+      const _this = this;
       const { seriesData } = this.$props;
       this.option.series[1].data = seriesData.pie_data;
       this.echartsView.setOption(this.option);
+      this.echartsView.on('mousemove', (params) => {
+        _this.$emit('open-view-detail', params.name);
+      });
+      this.echartsView.on('mouseout', () => {
+        _this.$emit('close-view-detail');
+      });
     },
   },
 };
