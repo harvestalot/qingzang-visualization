@@ -22,6 +22,11 @@ const routes = [
             component: () => import('@/views/TibetPlateau/Integral'),
           },
           {
+            path: 'urbanization-rate',
+            name: 'Home.Integral.UrbanizationRate',
+            component: () => import('@/views/TibetPlateau/UrbanizationRate'),
+          },
+          {
             path: 'population-size',
             name: 'Home.Integral.PopulationSize',
             component: () => import('@/views/TibetPlateau/PopulationSize'),
@@ -35,6 +40,11 @@ const routes = [
             path: 'town-temporal-distribution',
             name: 'Home.Integral.TownTemporalDistribution',
             component: () => import('@/views/TibetPlateau/TownTemporalDistribution'),
+          },
+          {
+            path: 'water',
+            name: 'Home.Integral.Water',
+            component: () => import('@/views/TibetPlateau/Water'),
           },
         ],
       },
