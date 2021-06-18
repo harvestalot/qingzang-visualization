@@ -1,10 +1,7 @@
 <template>
   <div class="UrbanizationRate">
     <Map ref="childMap" />
-    <TimerShaft
-      :times="['1990', '2000', '2010']"
-      :currentTime="currentTime"
-    />
+    <TimerShaft :times="['1990', '2000', '2010']" :currentTime="currentTime" />
   </div>
 </template>
 
@@ -30,6 +27,7 @@ export default {
     currentTime: {
       immediate: true,
       handler(year) {
+        console.log(year);
         this.$nextTick(() => {
           this.init(year);
         });
@@ -46,11 +44,11 @@ export default {
       this.$refs.childMap.initChart({ year, index });
     },
     startTimeline() {
-      let index = 1;
-      this.timer = setInterval(() => {
-        if (index === 3) index = 0;
-        this.currentTime = this.timeline[index];
-        index += 1;
+      this.timer = setTimeout(() => {
+        if (this.currentTimeIndex === 3) this.currentTimeIndex = 0;
+        this.currentTime = this.timeline[this.currentTimeIndex];
+        this.currentTimeIndex += 1;
+        this.startTimeline();
       }, 5000);
     },
     destroyed() {

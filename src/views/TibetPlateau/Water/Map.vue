@@ -1,9 +1,6 @@
 <template>
   <div class="Map">
-    <div
-      ref="mapGraph"
-      class="Map-container"
-    ></div>
+    <div ref="mapGraph" class="Map-container"></div>
   </div>
 </template>
 
@@ -14,6 +11,7 @@ import $water from '@/assets/mockData/qingzang/water.json';
 require('echarts/lib/chart/map');
 require('echarts/lib/chart/scatter');
 require('echarts/lib/component/geo');
+require('echarts/lib/component/visualMap');
 
 export default {
   name: 'Map',
@@ -53,7 +51,6 @@ export default {
       }
     },
     initChartOptions() {
-      console.log(this.mapData);
       this.option = {
         title: {
           text: '水资源',
@@ -63,31 +60,18 @@ export default {
             color: '#fff',
           },
         },
-        visualMap:
-          // [
+        visualMap: [
           {
-            // type: 'continuous',
-            show: true,
+            show: false,
+            type: 'continuous',
+            seriesIndex: 0,
             min: 0,
             max: 1,
-            // seriesIndex: [0],
-            // range: [0, 1],
-            // pieces: [
-            //   { gte: 0.1, lte: 0.3, label: '1-9人' },
-            //   { lte: 0.1, label: '1-9人' },
-            // ],
             inRange: {
-              color: [
-                '#d1d4da',
-                '#bacae8',
-                '#96b5ef',
-                '#6797ef',
-                '#3375e4',
-                '#035cf5',
-              ],
+              color: ['#09184D', '#1D48E6'],
             },
           },
-        // ],
+        ],
         geo: {
           map: 'QZ-BOUNDARY',
           center: [89.0887, 33.1168],
@@ -107,10 +91,29 @@ export default {
         },
         series: [
           {
-            // name: '人口规模',
             type: 'map',
-            // map: 'QZ-BOUNDARY',
-            // geoIndex: 0,
+            map: 'QZ-BOUNDARY',
+            center: [89.0887, 33.1168],
+            layoutCenter: ['50%', '50%'],
+            layoutSize: '124%',
+            itemStyle: {
+              normal: {
+                areaColor: '#09184D',
+                borderColor: '#75DCFF',
+              },
+              emphasis: {
+                areaColor: '#09184D',
+                borderColor: '#75DCFF',
+              },
+            },
+            label: {
+              emphasis: {
+                show: true,
+                textStyle: {
+                  color: '#fff',
+                },
+              },
+            },
             data: this.mapData,
           },
         ],
