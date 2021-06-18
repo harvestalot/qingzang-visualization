@@ -66,7 +66,7 @@ export default {
       $echartsOptions.echarts.registerMap('QZ-BOUNDARY', mapJson);
       this.option = {
         title: {
-          text: '城市化率',
+          text: '城镇化率时空变化',
           left: 20,
           top: 20,
           textStyle: {
@@ -80,13 +80,18 @@ export default {
         },
         visualMap: [
           {
-            show: false,
             type: 'continuous',
+            left: 50,
+            bottom: 100,
+            text: ['高', '低'],
+            textStyle: {
+              color: '#fff',
+            },
             seriesIndex: 0,
             min: 0,
             max: 100,
             inRange: {
-              color: ['#09184D', '#1D48E6'],
+              color: ['#FFFF00', '#FF0000', '#660066'],
             },
           },
         ],

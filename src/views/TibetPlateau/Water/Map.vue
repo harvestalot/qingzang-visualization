@@ -53,7 +53,7 @@ export default {
     initChartOptions() {
       this.option = {
         title: {
-          text: '水资源',
+          text: '水资源短缺的空间格局',
           left: 20,
           top: 20,
           textStyle: {
@@ -62,13 +62,18 @@ export default {
         },
         visualMap: [
           {
-            show: false,
             type: 'continuous',
+            left: 50,
+            bottom: 100,
+            text: ['强', '弱'],
+            textStyle: {
+              color: '#fff',
+            },
             seriesIndex: 0,
             min: 0,
             max: 1,
             inRange: {
-              color: ['#09184D', '#1D48E6'],
+              color: ['#1F4111', '#00FF02'],
             },
           },
         ],

@@ -15,6 +15,7 @@ export default {
   data() {
     return {
       amap: null,
+      imageLayerUrl: require('@/assets/images/qingzang.png'),
     };
   },
   mounted() {
@@ -36,8 +37,8 @@ export default {
       })
         .then((AMap) => {
           const imageLayer = new AMap.ImageLayer({
-            url: '/qingzang.png',
-            bounds: new AMap.Bounds([70.572, 18.179], [106.198, 46.236]),
+            url: this.imageLayerUrl,
+            bounds: new AMap.Bounds([71.972, 18.679], [106.198, 45.136]),
             zooms: [5, 20],
           });
           this.amap = new AMap.Map('mapContainer', {
@@ -121,21 +122,6 @@ export default {
         text.setMap(this.amap);
       });
     },
-    // readFile(filePath) {
-    //   // 创建一个新的xhr对象
-    //   let xhr = null;
-    //   if (window.XMLHttpRequest) {
-    //     xhr = new XMLHttpRequest();
-    //   } else {
-    //     // eslint-disable-next-line
-    //     xhr = new ActiveXObject('Microsoft.XMLHTTP');
-    //   }
-    //   const okStatus = document.location.protocol === 'file' ? 0 : 200;
-    //   xhr.open('GET', filePath, false);
-    //   xhr.overrideMimeType('text/html;charset=utf-8');
-    //   xhr.send(null);
-    //   return xhr.status === okStatus ? xhr.responseText : null;
-    // },
   },
 };
 </script>
