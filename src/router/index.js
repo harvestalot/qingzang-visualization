@@ -39,12 +39,21 @@ const routes = [
           {
             path: 'town-temporal-distribution',
             name: 'Home.Integral.TownTemporalDistribution',
-            component: () => import('@/views/TibetPlateau/TownTemporalDistribution'),
+            component: () =>
+              import('@/views/TibetPlateau/TownTemporalDistribution'),
           },
           {
             path: 'water',
             name: 'Home.Integral.Water',
             component: () => import('@/views/TibetPlateau/Water'),
+          },
+          {
+            path: 'population-move',
+            name: 'Home.Integral.PopulationMove',
+            component: () => import('@/views/TibetPlateau/PopulationMove'),
+            meta: {
+              url: './population-move/flow.html',
+            },
           },
         ],
       },
