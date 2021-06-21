@@ -1,7 +1,7 @@
 <template>
   <div class="Header">
     <h1>
-      <router-link to="/">城市化与生态环境迫协可视化</router-link>
+      <router-link to="/">城市化与生态环境胁迫可视化</router-link>
     </h1>
     <div class="menu">
       <el-menu
@@ -13,7 +13,7 @@
         router
       >
         <el-submenu
-          index='tibet-plateau'
+          index="tibet-plateau"
           :popper-append-to-body="false"
           class="submenu-popup"
         >
@@ -22,22 +22,32 @@
           </template>
           <el-submenu index="urbanization">
             <template slot="title">城镇化</template>
-            <el-menu-item index="/tibet-plateau/urbanization-rate">城镇化率时空变化</el-menu-item>
-            <el-menu-item index="/tibet-plateau/population-size">人口规模时空演变</el-menu-item>
-            <el-menu-item index="/tibet-plateau/use-land-scale">用地规模时空演变</el-menu-item>
-            <el-menu-item index='/tibet-plateau/town-temporal-distribution'>城镇时空分布的核密度</el-menu-item>
+            <el-menu-item index="/tibet-plateau/urbanization-rate"
+              >城镇化率时空变化</el-menu-item
+            >
+            <el-menu-item index="/tibet-plateau/population-size"
+              >人口规模时空演变</el-menu-item
+            >
+            <el-menu-item index="/tibet-plateau/use-land-scale"
+              >用地规模时空演变</el-menu-item
+            >
+            <el-menu-item index="/tibet-plateau/town-temporal-distribution"
+              >城镇时空分布的核密度</el-menu-item
+            >
             <el-menu-item>人口空间分异</el-menu-item>
             <el-menu-item>人口迁移的近远程空间分异</el-menu-item>
           </el-submenu>
-          <el-submenu index='ecotope'>
+          <el-submenu index="ecotope">
             <template slot="title">生态环境</template>
-            <el-menu-item index="/tibet-plateau/water">水资源短缺的空间格局</el-menu-item>
+            <el-menu-item index="/tibet-plateau/water"
+              >水资源短缺的空间格局</el-menu-item
+            >
             <el-menu-item>草地退化与草场利用的情况</el-menu-item>
             <el-menu-item>草地退化的空间变化特征</el-menu-item>
             <el-menu-item>气候要素与草地退化关系</el-menu-item>
             <el-menu-item>生态用地空间转移的热点分布</el-menu-item>
           </el-submenu>
-          <el-submenu index='urbanization-ecotope'>
+          <el-submenu index="urbanization-ecotope">
             <template slot="title">城市化与生态环境</template>
             <el-menu-item>旅游业发展变化</el-menu-item>
             <el-menu-item>旅游压力的空间分布格局</el-menu-item>
@@ -46,7 +56,7 @@
           </el-submenu>
         </el-submenu>
         <el-submenu
-          index='lasa'
+          index="lasa"
           :popper-append-to-body="false"
           class="submenu-popup"
         >
@@ -58,19 +68,19 @@
             <el-menu-item>范围界定</el-menu-item>
             <el-menu-item>城镇化率时空演变特征</el-menu-item>
           </el-submenu>
-          <el-submenu index='ecotope'>
+          <el-submenu index="ecotope">
             <template slot="title">生态环境</template>
             <el-menu-item>RSEI指数的时空变化</el-menu-item>
             <el-menu-item>城镇化率时空演变特征</el-menu-item>
           </el-submenu>
-          <el-submenu index='urbanization-ecotope'>
+          <el-submenu index="urbanization-ecotope">
             <template slot="title">城镇化与生态环境</template>
             <el-menu-item>土地利用与RSEI的相互作用关系</el-menu-item>
             <el-menu-item>城镇化与生态环境的协同效应</el-menu-item>
           </el-submenu>
         </el-submenu>
         <el-submenu
-          index='lanxi'
+          index="lanxi"
           :popper-append-to-body="false"
           class="submenu-popup"
         >
@@ -79,14 +89,14 @@
           </template>
           <el-menu-item>城镇化</el-menu-item>
           <el-menu-item>生态环境</el-menu-item>
-          <el-submenu index='urbanization-ecotope'>
+          <el-submenu index="urbanization-ecotope">
             <template slot="title">城镇化与生态环境</template>
             <el-menu-item>耦合度关系</el-menu-item>
             <el-menu-item>协调度关系</el-menu-item>
           </el-submenu>
         </el-submenu>
         <el-submenu
-          index='frontier'
+          index="frontier"
           :popper-append-to-body="false"
           class="submenu-popup"
         >
