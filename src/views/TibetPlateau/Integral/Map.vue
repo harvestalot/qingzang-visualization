@@ -9,6 +9,7 @@ import AMapLoader from '@amap/amap-jsapi-loader';
 import $lsBoundaryData from '@/assets/mockData/ls_boundary_data.json';
 import $lxBoundaryData from '@/assets/mockData/lx_boundary_data.json';
 import $bjBoundaryData from '@/assets/mockData/bj_boundary_data.json';
+import $cityPtQzData from '@/assets/mockData/qingzang/city_pt_qz.json';
 
 export default {
   name: 'Map',
@@ -16,6 +17,8 @@ export default {
     return {
       amap: null,
       imageLayerUrl: require('@/assets/images/qingzang.png'),
+      icon: require('@/assets/images/center.svg'),
+      markers: [],
     };
   },
   mounted() {
@@ -52,6 +55,7 @@ export default {
           });
           this.amap.add(imageLayer);
           this.loadAreaPolygon();
+          this.loadMarkerPolygon();
         })
         .catch((e) => {
           console.log(e);
@@ -74,7 +78,7 @@ export default {
             switch (areaName) {
               case '拉萨都市圈':
                 fillColor = '#FF0E96';
-                lnglat = [91.14728, 30.925737];
+                lnglat = [91.14728, 31.525737];
                 break;
               case '兰西城市群':
                 fillColor = '#FFE33A';
@@ -113,7 +117,7 @@ export default {
             'background-color': 'rgba(0,0,0,.5)',
             border: '1px solid rgba(0,0,0,.5)',
             'text-align': 'center',
-            'font-size': '18px',
+            'font-size': '14px',
             'font-weight': '700',
             'box-shadow': '0 2px 6px 0 rgba(114, 124, 245, .5)',
           },
@@ -121,6 +125,49 @@ export default {
         });
         text.setMap(this.amap);
       });
+    },
+    loadMarkerPolygon() {
+      AMapLoader.load({
+        key: 'b73fb6ec5455d81889ebc9abe077c0bd',
+      }).then((AMap) => {
+        $cityPtQzData.features.forEach((item) => {
+          const marker = new AMap.Marker({
+            position: item.geometry.coordinates,
+            icon: new AMap.Icon(this.getCityIcon(item.properties.city_class)),
+            // label: {
+            //   content: '舒服舒服',
+            // },
+          });
+          this.markers.push(marker);
+        });
+        this.amap.add(this.markers);
+      });
+    },
+    getCityIcon(level) {
+      let size = new AMap.Size(24, 24);
+      let offset = new AMap.Pixel(-12, -12);
+      switch (level) {
+        case 1:
+          size = new AMap.Size(24, 24);
+          offset = new AMap.Pixel(-12, -12);
+          break;
+        case 2:
+          size = new AMap.Size(16, 16);
+          offset = new AMap.Pixel(-8, -8);
+          break;
+        case 3:
+          size = new AMap.Size(8, 8);
+          offset = new AMap.Pixel(-4, -4);
+          break;
+        default:
+          break;
+      }
+      return {
+        size,
+        image: this.icon,
+        imageSize: size,
+        offset,
+      };
     },
   },
 };
@@ -134,5 +181,10 @@ export default {
     width: 100%;
     height: 100%;
   }
+}
+</style>
+<style>
+.amap-container .amap-logo {
+  display: none !important;
 }
 </style>

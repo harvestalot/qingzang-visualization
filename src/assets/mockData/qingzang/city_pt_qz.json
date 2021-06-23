@@ -1,0 +1,23 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[99.43976826506855,27.956982717352446]},"properties":{"省代码":530000,"省":"云南省","市代码":533400,"市":"迪庆","类型":"自治州","ORIG_FID":299,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[99.99701819327578,30.948560323194386]},"properties":{"省代码":510000,"省":"四川省","市代码":513300,"市":"甘孜","类型":"自治州","ORIG_FID":273,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[102.60944391241594,32.400242953491784]},"properties":{"省代码":510000,"省":"四川省","市代码":513200,"市":"阿坝","类型":"自治州","ORIG_FID":272,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[86.48437561969837,29.489817753284683]},"properties":{"省代码":540000,"省":"西藏自治区","市代码":540200,"市":"日喀则","类型":"地级市","ORIG_FID":301,"city_class":2}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[91.08977785719856,30.036992919407624]},"properties":{"省代码":540000,"省":"西藏自治区","市代码":540100,"市":"拉萨","类型":"地级市","ORIG_FID":300,"city_class":1}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[97.73475715874997,30.884993225452718]},"properties":{"省代码":540000,"省":"西藏自治区","市代码":540300,"市":"昌都","类型":"地级市","ORIG_FID":302,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[95.24369372115268,29.201968725700453]},"properties":{"省代码":540000,"省":"西藏自治区","市代码":540400,"市":"林芝","类型":"地级市","ORIG_FID":303,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[93.2834269812501,27.835640514505315]},"properties":{"省代码":540000,"省":"西藏自治区","市代码":540500,"市":"山南","类型":"地级市","ORIG_FID":304,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[89.26405538363286,32.73971613575213]},"properties":{"省代码":540000,"省":"西藏自治区","市代码":540600,"市":"那曲","类型":"地级市","ORIG_FID":305,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[82.55783456378668,33.02939231001858]},"properties":{"省代码":540000,"省":"西藏自治区","市代码":542500,"市":"阿里","类型":"地区","ORIG_FID":306,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[103.28016988688682,35.63018333243383]},"properties":{"省代码":620000,"省":"甘肃省","市代码":622900,"市":"临夏","类型":"自治州","ORIG_FID":329,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[102.7612846400001,34.85908712497945]},"properties":{"省代码":620000,"省":"甘肃省","市代码":623000,"市":"甘南","类型":"自治州","ORIG_FID":330,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[101.43745795138545,36.827970114989455]},"properties":{"省代码":630000,"省":"青海省","市代码":630100,"市":"西宁","类型":"地级市","ORIG_FID":331,"city_class":1}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[102.34369153101471,36.33201516893507]},"properties":{"省代码":630000,"省":"青海省","市代码":630200,"市":"海东","类型":"地级市","ORIG_FID":332,"city_class":2}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[100.30291057280857,37.758924982695646]},"properties":{"省代码":630000,"省":"青海省","市代码":632200,"市":"海北","类型":"自治州","ORIG_FID":333,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[101.56906121250012,34.84997191453789]},"properties":{"省代码":630000,"省":"青海省","市代码":632300,"市":"黄南","类型":"自治州","ORIG_FID":334,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[100.25332855796881,35.90236204962372]},"properties":{"省代码":630000,"省":"青海省","市代码":632500,"市":"海南","类型":"自治州","ORIG_FID":335,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[99.41993734342185,34.115743284033385]},"properties":{"省代码":630000,"省":"青海省","市代码":632600,"市":"果洛","类型":"自治州","ORIG_FID":336,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[94.32138777520072,34.21085633916374]},"properties":{"省代码":630000,"省":"青海省","市代码":632700,"市":"玉树","类型":"自治州","ORIG_FID":337,"city_class":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[94.9023823600001,37.003368411093504]},"properties":{"省代码":630000,"省":"青海省","市代码":632800,"市":"海西","类型":"自治州","ORIG_FID":338,"city_class":2}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[79.29564633250016,35.79381808476529]},"properties":{"省代码":650000,"省":"新疆维吾尔自治区","市代码":653200,"市":"和田","类型":"地区","ORIG_FID":354,"city_class":3}}
+]}

@@ -1,9 +1,6 @@
 <template>
   <div class="Map">
-    <div
-      ref="mapGraph"
-      class="Map-container"
-    ></div>
+    <div ref="mapGraph" class="Map-container"></div>
     <!-- <TimerShaft
       :times="['1990', '2000', '2010', '2015']"
       :futureTimes="['2025', '2030', '2035']"
@@ -35,14 +32,23 @@ export default {
       currentTime: '1990',
       currentTimeIndex: 0,
       timeline: ['1990', '2000', '2010', '2015', '2025', '2030', '2035'],
+      // colors: [
+      //   '#F6C044',
+      //   '#F3AD09',
+      //   '#F18B07',
+      //   '#F87309',
+      //   '#f0993c',
+      //   '#8DF965',
+      //   '#d66349',
+      // ],
       colors: [
-        '#F6C044',
-        '#F3AD09',
-        '#F18B07',
-        '#F87309',
-        '#f0993c',
-        '#8DF965',
-        '#d66349',
+        '#ff0000',
+        '#ff0000',
+        '#ff0000',
+        '#ff0000',
+        '#db87f1',
+        '#db87f1',
+        '#db87f1',
       ],
     };
   },

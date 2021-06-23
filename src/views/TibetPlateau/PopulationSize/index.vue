@@ -129,26 +129,37 @@ export default {
       margin: 7px 0;
     }
   }
-  .map-legend-0 p .icon {
-    border-color: #f6c044;
-  }
-  .map-legend-1 p .icon {
-    border-color: #f3ad09;
-  }
-  .map-legend-2 p .icon {
-    border-color: #f18b07;
-  }
+  // .map-legend-0 p .icon {
+  //   border-color: #f6c044;
+  // }
+  // .map-legend-1 p .icon {
+  //   border-color: #f3ad09;
+  // }
+  // .map-legend-2 p .icon {
+  //   border-color: #f18b07;
+  // }
+  // .map-legend-3 p .icon {
+  //   border-color: #f87309;
+  // }
+  // .map-legend-4 p .icon {
+  //   border-color: #f0993c;
+  // }
+  // .map-legend-5 p .icon {
+  //   border-color: #8df965;
+  // }
+  // .map-legend-6 p .icon {
+  //   border-color: #d66349;
+  // }
+  .map-legend-0 p .icon,
+  .map-legend-1 p .icon,
+  .map-legend-2 p .icon,
   .map-legend-3 p .icon {
-    border-color: #f87309;
+    border-color: #ff0000;
   }
-  .map-legend-4 p .icon {
-    border-color: #f0993c;
-  }
-  .map-legend-5 p .icon {
-    border-color: #8df965;
-  }
+  .map-legend-4 p .icon,
+  .map-legend-5 p .icon,
   .map-legend-6 p .icon {
-    border-color: #d66349;
+    border-color: #db87f1;
   }
   .StatisticalGraph {
     position: absolute;

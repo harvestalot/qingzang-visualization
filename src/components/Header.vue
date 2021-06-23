@@ -35,9 +35,7 @@
               >城镇时空分布的核密度</el-menu-item
             >
             <el-menu-item>人口空间分异</el-menu-item>
-            <el-menu-item index="/tibet-plateau/population-move"
-              >人口迁移的近远程空间分异</el-menu-item
-            >
+            <el-menu-item>人口迁移的近远程空间分异</el-menu-item>
             <!-- <el-menu-item>
               <a href="./population-move/flow.html" target="_blank"
                 >人口迁移的近远程空间分异</a
@@ -61,6 +59,9 @@
             <el-menu-item>生态环境与旅游业的协调度空间分布</el-menu-item>
             <el-menu-item>人为干扰影响下的草原退化格局</el-menu-item>
           </el-submenu>
+          <el-menu-item index="/tibet-plateau/population-move"
+            >人口流动</el-menu-item
+          >
         </el-submenu>
         <el-submenu
           index="lasa"

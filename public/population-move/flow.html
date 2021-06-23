@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <title>人口流动图</title>
+    <link rel="stylesheet" type="text/css" href="css/flow.css"/>
+</head>
+
+<body style="height:100%;background:rgb(77,83,87);overflow:hidden">
+    <div id="Top">
+        青藏高原近远程人口流动
+    </div>
+    <div id="Middle">
+            <select id="area" onchange="areachoose(this.value)">
+                <option class="option-item" value="01">全国</option>
+                <option class="option-item" value="02">青海&西藏</option>
+            </select>
+            <select id="Month" onchange="Monthchoose(this.value)">>
+                <option class="option-item" value="01">January</option>
+                <option class="option-item" value="02">February</option>
+                <option class="option-item" value="03">March</option>
+                <option class="option-item" value="04">April</option>
+                <option class="option-item" value="05">May</option>
+                <option class="option-item" value="06">June</option>
+                <option class="option-item" value="07">July</option>
+                <option class="option-item" value="08">August</option>
+                <option class="option-item" value="09">September</option>
+                <option class="option-item" value="10">October</option>
+                <option class="option-item" value="11">November</option>
+                <option class="option-item" value="12">December</option>
+                <option class="option-item" value="0">2017</option>
+            </select>
+            <select id="flow_in_out" onchange="Waychoose(this.value)">
+                <option class="option-item" value="out">Flow out</option>
+                <option class="option-item" value="in">Flow in</option>
+            </select>
+            <select id="long_short" onchange="Distancechoose(this.value)">
+                <option disabled hidden selected>MDS</option>
+                <option class="option-item" value="long">远程</option>
+                <option class="option-item" value="short">近程</option>
+            </select>
+    </div>
+    <div id="mainMap" style="height:95%;width:100%;"></div>
+    <div id="MDS_DIV">
+            <img src="image/wrong.png" style="width:15px;height:15px;float:right" onclick="disapp()"/>
+            <div id="MDS_DIV1"></div>
+            <div id="MDS_DIV2"></div>
+    </div>
+    </div>
+    <div id="b1"></div>
+    <div id="b2">
+        <div id="bar1"></div>
+        <div id="bar2"></div>
+    </div>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
+    <script type="text/javascript" src="js/MDS.js"></script> 
+    <script type="text/javascript" src="js/drag.js"></script> 
+    <script type="text/javascript" src="js/ReadCSV.js"></script>
+    <script type="text/javascript" src="js/echarts.js"></script>
+    <script type="text/javascript" src="js/FlowBar.js"></script>
+    <script type="text/javascript" src="js/Hover.js"></script>    
+    <script type="text/javascript" src="js/flow.js"></script>
+</body>
+</html>
