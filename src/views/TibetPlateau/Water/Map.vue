@@ -6,6 +6,7 @@
 
 <script>
 import $echartsOptions from '@/utils/echarts';
+import $prefectureCity from '@/assets/mockData/qingzang/prefecture-city.json';
 import $water from '@/assets/mockData/qingzang/water.json';
 
 require('echarts/lib/chart/map');
@@ -46,6 +47,10 @@ export default {
     initChart() {
       if (!this.mapView) {
         this.mapView = $echartsOptions.echarts.init(this.$refs.mapGraph);
+        $echartsOptions.echarts.registerMap(
+          'QZ-prefectureCity',
+          $prefectureCity
+        );
         $echartsOptions.echarts.registerMap('QZ-BOUNDARY', $water);
         this.initChartOptions();
       }
@@ -78,21 +83,33 @@ export default {
           },
         ],
         geo: {
-          map: 'QZ-BOUNDARY',
+          map: 'QZ-prefectureCity',
           center: [89.0887, 33.1168],
           layoutCenter: ['50%', '50%'],
           layoutSize: '124%',
-          // itemStyle: {
-          //   normal: {
-          //     borderColor: 'rgba(0, 0, 0, 0.2)',
-          //   },
-          //   emphasis: {
-          //     areaColor: '#f2d5ad',
-          //     shadowOffsetX: 0,
-          //     shadowOffsetY: 0,
-          //     borderWidth: 0,
-          //   },
-          // },
+          // zlevel: 2,
+          zoom: 1.1,
+          z: 2,
+          label: {
+            show: true,
+            fontSize: 16,
+            fontWeight: 700,
+            color: '#fff',
+          },
+          itemStyle: {
+            normal: {
+              areaColor: 'rgba(255, 255, 255, .1)',
+              borderColor: '#fff',
+              borderWidth: 2,
+            },
+            emphasis: {
+              show: false,
+              // areaColor: '#f2d5ad',
+              // shadowOffsetX: 0,
+              // shadowOffsetY: 0,
+              // borderWidth: 0,
+            },
+          },
         },
         series: [
           {
@@ -101,14 +118,16 @@ export default {
             center: [89.0887, 33.1168],
             layoutCenter: ['50%', '50%'],
             layoutSize: '124%',
+            zoom: 1.12,
+            z: 1,
             itemStyle: {
               normal: {
                 areaColor: '#09184D',
-                borderColor: '#75DCFF',
+                borderColor: 'rgba(117, 220, 255, .5)',
               },
               emphasis: {
                 areaColor: '#09184D',
-                borderColor: '#75DCFF',
+                borderColor: 'rgba(117, 220, 255, .5)',
               },
             },
             label: {
