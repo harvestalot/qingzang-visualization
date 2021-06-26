@@ -17,7 +17,9 @@ export default {
     return {
       amap: null,
       imageLayerUrl: require('@/assets/images/qingzang.png'),
-      icon: require('@/assets/images/center.svg'),
+      icon_city_1: require('@/assets/images/city-1.svg'),
+      icon_city_2: require('@/assets/images/city-2.svg'),
+      icon_city_3: require('@/assets/images/city-3.svg'),
       markers: [],
     };
   },
@@ -146,16 +148,20 @@ export default {
     getCityIcon(level) {
       let size = new AMap.Size(24, 24);
       let offset = new AMap.Pixel(-12, -12);
+      let icon = this.icon_city_1;
       switch (level) {
         case 1:
-          size = new AMap.Size(24, 24);
-          offset = new AMap.Pixel(-12, -12);
-          break;
-        case 2:
+          icon = this.icon_city_1;
           size = new AMap.Size(16, 16);
           offset = new AMap.Pixel(-8, -8);
           break;
+        case 2:
+          icon = this.icon_city_2;
+          size = new AMap.Size(12, 12);
+          offset = new AMap.Pixel(-6, -6);
+          break;
         case 3:
+          icon = this.icon_city_3;
           size = new AMap.Size(8, 8);
           offset = new AMap.Pixel(-4, -4);
           break;
@@ -164,7 +170,7 @@ export default {
       }
       return {
         size,
-        image: this.icon,
+        image: icon,
         imageSize: size,
         offset,
       };
